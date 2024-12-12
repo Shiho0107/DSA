@@ -48,14 +48,14 @@ public class StudentManagement {
         System.out.println("Students sorted by marks.");
     }
 
-    public void mergeSortByName(List<StudentADT> studentList) {
+    public void mergeSortByName(List<Student> studentList) {
         if (studentList.size() < 2) {
             return;
         }
         int mid = studentList.size() / 2;
 
-        List<StudentADT> leftHalf = new ArrayList<>(studentList.subList(0, mid));
-        List<StudentADT> rightHalf = new ArrayList<>(studentList.subList(mid, studentList.size()));
+        List<Student> leftHalf = new ArrayList<>(studentList.subList(0, mid));
+        List<Student> rightHalf = new ArrayList<>(studentList.subList(mid, studentList.size()));
 
         mergeSortByName(leftHalf);
         mergeSortByName(rightHalf);
@@ -63,7 +63,7 @@ public class StudentManagement {
         mergeByName(studentList, leftHalf, rightHalf);
     }
 
-    private void mergeByName(List<StudentADT> studentList, List<StudentADT> leftHalf, List<StudentADT> rightHalf) {
+    private void mergeByName(List<Student> studentList, List<Student> leftHalf, List<Student> rightHalf) {
         int i = 0, j = 0, k = 0;
 
         while (i < leftHalf.size() && j < rightHalf.size()) {
