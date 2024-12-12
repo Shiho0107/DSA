@@ -48,6 +48,47 @@ public class StudentManagement {
         System.out.println("Students sorted by marks.");
     }
 
+        public void mergeSortByName(List<StudentADT> studentList) {
+        if (studentList.size() < 2) {
+            return; // Base case: if the list is already sorted
+        }
+        int mid = studentList.size() / 2;
+
+        // Split the list into two halves
+        List<StudentADT> leftHalf = new ArrayList<>(studentList.subList(0, mid));
+        List<StudentADT> rightHalf = new ArrayList<>(studentList.subList(mid, studentList.size()));
+
+        // Recursively sort both halves
+        mergeSortByName(leftHalf);
+        mergeSortByName(rightHalf);
+
+        // Merge the sorted halves
+        mergeByName(studentList, leftHalf, rightHalf);
+    }
+
+    private void mergeByName(List<StudentADT> studentList, List<StudentADT> leftHalf, List<StudentADT> rightHalf) {
+        int i = 0, j = 0, k = 0;
+
+        // Merge the two halves in ascending order of names
+        while (i < leftHalf.size() && j < rightHalf.size()) {
+            if (leftHalf.get(i).getName().compareTo(rightHalf.get(j).getName()) <= 0) {
+                studentList.set(k++, leftHalf.get(i++));
+            } else {
+                studentList.set(k++, rightHalf.get(j++));
+            }
+        }
+
+        // Copy remaining elements from leftHalf, if any
+        while (i < leftHalf.size()) {
+            studentList.set(k++, leftHalf.get(i++));
+        }
+
+        // Copy remaining elements from rightHalf, if any
+        while (j < rightHalf.size()) {
+            studentList.set(k++, rightHalf.get(j++));
+        }
+    }
+    
     public Student searchStudent(int id) {
         for (Student student : studentList) {
             if (student.getId() == id) {
