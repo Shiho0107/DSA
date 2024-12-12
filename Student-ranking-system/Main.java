@@ -20,11 +20,18 @@ public class Main {
         // Deleting a student
         studentManagement.deleteStudent(5);
 
-        // Sorting students by marks
+        // Sorting students by marks using Bubble sort
         studentManagement.sortStudents();
 
-        // Displaying sorted students
-        System.out.println("\nSorted Students:");
+        // Displaying sorted students by marks
+        System.out.println("\nSorted Students by marks:");
+        studentManagement.displayStudentsWithRanks();
+
+        // Sort students by names using merge sort
+        studentManagement.sortStudentsByNames();
+
+        // Display sorted students by name
+        System.out.println("\nSorted Students by name:");
         studentManagement.displayStudentsWithRanks();
 
         // Searching for a student
