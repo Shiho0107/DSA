@@ -48,7 +48,7 @@ public class StudentManagement {
         System.out.println("Students sorted by marks.");
     }
 
-        public void mergeSortByName(List<StudentADT> studentList) {
+    public void mergeSortByName(List<StudentADT> studentList) {
         if (studentList.size() < 2) {
             return; // Base case: if the list is already sorted
         }
