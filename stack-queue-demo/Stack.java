@@ -42,48 +42,6 @@ class Stack {
     public boolean isEmpty() {
         return top == null;  // If top is null, stack is empty
     }
-}// Stack class using a linked list
-class Stack {
-    private Node top;  // Pointer to the top of the stack
-
-    // Constructor to initialize the stack
-    public Stack() {
-        this.top = null;  // Stack is initially empty
-    }
-
-    // Push an element onto the stack
-    public void push(int value) {
-        Node newNode = new Node(value);  // Create a new node
-        newNode.next = top;  // Link the new node to the current top
-        top = newNode;  // Update top to the new node
-    }
-
-    // Pop an element from the stack
-    public int pop() {
-        if (isEmpty()) {
-            System.out.println("Stack is empty. Cannot pop.");
-            return -1;  // Indicate stack is empty
-        } else {
-            int poppedValue = top.data;  // Get the top element
-            top = top.next;  // Update top to the next node
-            return poppedValue;  // Return the popped value
-        }
-    }
-
-    // Peek at the top element without removing it
-    public int peek() {
-        if (isEmpty()) {
-            System.out.println("Stack is empty. Cannot peek.");
-            return -1;  // Indicate stack is empty
-        } else {
-            return top.data;  // Return the top element
-        }
-    }
-
-    // Check if the stack is empty
-    public boolean isEmpty() {
-        return top == null;  // If top is null, stack is empty
-    }
 }
 
 class Stack {
