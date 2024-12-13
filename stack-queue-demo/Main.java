@@ -1,14 +1,18 @@
 public class Main {
     public static void main(String[] args) {
         // Stack demonstration
-        System.out.println("Stack Operations:");
-        Stack<Integer> stack = new Stack<>();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        System.out.println("Popped from stack: " + stack.pop()); // Outputs 3
-        System.out.println("Peek stack: " + stack.peek()); // Outputs 2
-        System.out.println("Stack size: " + stack.size()); // Outputs 2
+Stack stack = new Stack();  // Create a new stack
+
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        System.out.println("Top element: " + stack.peek());
+
+        System.out.println("Popped element: " + stack.pop());
+        System.out.println("Popped element: " + stack.pop());
+
+        System.out.println("Is stack empty? " + stack.isEmpty());
 
         // Queue demonstration
         System.out.println("\nQueue Operations:");
