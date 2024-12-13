@@ -1,3 +1,4 @@
+
 package org.example;
 
 public class Main {
@@ -17,8 +18,14 @@ public class Main {
         // Editing a student
         studentManagement.editStudent(3, "Charlie Updated", 75);
 
+        // Displaying students
+        studentManagement.displayStudentsWithRanks();
+
         // Deleting a student
         studentManagement.deleteStudent(5);
+
+        // Displaying students
+        studentManagement.displayStudentsWithRanks();
 
         // Sorting students by marks using Bubble sort
         studentManagement.sortStudents();
@@ -41,5 +48,11 @@ public class Main {
         } else {
             System.out.println("\nStudent not found.");
         }
+
+        // Generate random students
+        int numberOfStudents = 10000;
+        studentManagement.generateRandomStudents(numberOfStudents);
+
+        studentManagement.compareSortTimes();
     }
 }
